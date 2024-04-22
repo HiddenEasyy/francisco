@@ -1,23 +1,18 @@
-nombres = []
-identificaciones = []
-
-contador = 1
+usuarios = [[], []]
 
 while True:
-    print("Ingrese los datos de la persona", contador, "o escriba 'salir' para terminar:")
+    print("Ingrese los datos de la persona o escriba 's' para finalizar:")
     nombre = input("Nombre: ")
-  
-    if nombre.lower() == 'salir':
-        break
-    
-    identificacion = input("Identificación: ")
-    nombres.append(nombre)
-    identificaciones.append(identificacion)
-    
-    contador += 1
 
-print("\nMostrando los datos de todas las personas:")
-for i in range(len(nombres)):
-    print("Persona", i + 1)
-    print("Nombre:", nombres[i])
-    print("Identificación:", identificaciones[i])
+    if nombre == "s" or nombre=="S":
+        break
+
+    identificación = input("Identificación: ")
+
+    usuarios[0].append(nombre)
+    usuarios[1].append(identificación)
+
+for i in range(len(usuarios[0])):
+    print("Mostrando los datos de la persona", i + 1)
+    print("Nombre:", usuarios[0][i])
+    print("Identificación:", usuarios[1][i])
